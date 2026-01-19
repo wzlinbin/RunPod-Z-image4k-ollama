@@ -35,7 +35,7 @@ def handler(job):
         workflow = {
             "39": {"inputs": {"clip_name": "qwen_3_4b.safetensors", "type": "lumina2", "device": "default"}, "class_type": "CLIPLoader"},
             "40": {"inputs": {"vae_name": "ae.safetensors"}, "class_type": "VAELoader"},
-            "41": {"inputs": {"width": 2048, "height": 2048, "batch_size": 1}, "class_type": "EmptySD3LatentImage"},
+            "41": {"inputs": {"width": 4096, "height": 4096, "batch_size": 1}, "class_type": "EmptySD3LatentImage"},
             "45": {"inputs": {"text": prompt_text, "clip": ["39", 0]}, "class_type": "CLIPTextEncode"},
             "42": {"inputs": {"conditioning": ["45", 0]}, "class_type": "ConditioningZeroOut"},
             "46": {"inputs": {"unet_name": "z_image_turbo_bf16.safetensors", "weight_dtype": "default"}, "class_type": "UNETLoader"},
